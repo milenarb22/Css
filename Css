@@ -1,0 +1,151 @@
+/* ==== Configuración general ==== */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* ==== Tipografía y colores ==== */
+body {
+  font-family: "Nunito", "Segoe UI", sans-serif; /* redondeada y amable */
+  font-size: 17px;
+  color: #4b3b2c; /* marrón suave para texto */
+  background-color: #fff8f0; /* fondo cálido crema */
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* ==== Navegación ==== */
+nav {
+  background-color: #e6b17e; /* naranja suave */
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #fffdf7;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #4b3b2c;
+}
+
+/* ==== Encabezados ==== */
+h1, h2, h3 {
+  color: #4b3b2c;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-size: 2.6em;
+  color: #b46b35;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #c7814a;
+  border-bottom: 2px dashed #e6b17e;
+  display: inline-block;
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #8c5c34;
+}
+
+/* ==== Párrafos ==== */
+p {
+  margin-bottom: 1em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+/* ==== Artículos ==== */
+article {
+  background-color: #fffdf8;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin: 2rem auto;
+  padding: 1.8rem;
+  max-width: 900px;
+  border: 1px solid #f1dfc8;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* ==== Imágenes ==== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 1.5em auto;
+  border: 3px solid #f1dfc8;
+}
+
+/* ==== Botones y links destacados ==== */
+a.button, button {
+  background-color: #c7814a;
+  color: #fffdf8;
+  padding: 0.7em 1.3em;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+a.button:hover, button:hover {
+  background-color: #a86433;
+  transform: scale(1.05);
+}
+
+/* ==== Márgenes y separación ==== */
+section, article {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+}
+
+/* ==== Footer ==== */
+footer {
+  background-color: #e6b17e;
+  color: #fffdf8;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 3rem;
+  font-size: 0.95em;
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.5px;
+}
+
+/* ==== Links dentro del texto ==== */
+a {
+  color: #b46b35;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #8c5c34;
+}
