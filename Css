@@ -1,52 +1,84 @@
-/* ==== Configuración general ==== */
+:root {
+  /* Colores */
+  --bg: #fff8f0;
+  --panel-bg: #fffdf8;
+  --text: #4b3b2c;
+  --muted: #8c5c34;
+  --accent: #c7814a;
+  --accent-dark: #a86433;
+  --nav-bg: #e6b17e;
+  --border: #f1dfc8;
+
+  /* Tipografía */
+  --font-sans: "Nunito", "Segoe UI", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+
+  /* Espaciado */
+  --base-padding: 1.5rem;
+  --radius: 10px;
+  --max-content-width: 900px;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 100%;
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: inherit;
 }
 
-/* ==== Tipografía y colores ==== */
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
-  font-family: "Nunito", "Segoe UI", sans-serif; /* redondeada y amable */
-  font-size: 17px;
-  color: #4b3b2c; /* marrón suave para texto */
-  background-color: #fff8f0; /* fondo cálido crema */
+  font-family: var(--font-sans);
+  font-size: 17px; /* puedes cambiar a 1.0625rem si prefieres rems */
+  color: var(--text);
+  background-color: var(--bg);
   margin: 0;
-  padding: 0;
   line-height: 1.7;
 }
 
-/* ==== Navegación ==== */
+/* Navegación */
 nav {
-  background-color: #e6b17e; /* naranja suave */
+  background-color: var(--nav-bg);
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 nav a {
   color: #fffdf7;
   text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
+  margin: 0 0.9rem;
+  font-weight: 700;
   font-size: 1.1em;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
-nav a:hover {
-  color: #4b3b2c;
+nav a:hover,
+nav a:focus-visible {
+  color: var(--text);
+  outline: none;
 }
 
-/* ==== Encabezados ==== */
+/* Encabezados */
 h1, h2, h3 {
-  color: #4b3b2c;
+  color: var(--text);
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   text-align: center;
-  font-family: "Merriweather", serif;
+  font-family: var(--font-serif);
+  line-height: 1.15;
 }
 
 h1 {
@@ -57,35 +89,41 @@ h1 {
 h2 {
   font-size: 1.8em;
   color: #c7814a;
-  border-bottom: 2px dashed #e6b17e;
+  border-bottom: 2px dashed var(--nav-bg);
   display: inline-block;
   padding-bottom: 0.3em;
 }
 
 h3 {
   font-size: 1.4em;
-  color: #8c5c34;
+  color: var(--muted);
 }
 
-/* ==== Párrafos ==== */
+/* Párrafos */
 p {
   margin-bottom: 1em;
-  max-width: 800px;
+  max-width: 50rem; /* aprox 800px */
   margin-left: auto;
   margin-right: auto;
   text-align: justify;
 }
 
-/* ==== Artículos ==== */
+/* Artículo (específico) */
 article {
-  background-color: #fffdf8;
+  background-color: var(--panel-bg);
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   margin: 2rem auto;
   padding: 1.8rem;
-  max-width: 900px;
-  border: 1px solid #f1dfc8;
+  max-width: var(--max-content-width);
+  border: 1px solid var(--border);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Separación general entre secciones (no duplicar reglas específicas) */
+section {
+  margin-bottom: 2.5rem;
+  padding: var(--base-padding);
 }
 
 article:hover {
@@ -93,59 +131,85 @@ article:hover {
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* ==== Imágenes ==== */
+/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: var(--radius);
   display: block;
   margin: 1.5em auto;
-  border: 3px solid #f1dfc8;
+  border: 3px solid var(--border);
 }
 
-/* ==== Botones y links destacados ==== */
+/* Botones y links destacados */
 a.button, button {
-  background-color: #c7814a;
+  background-color: var(--accent);
   color: #fffdf8;
   padding: 0.7em 1.3em;
   border: none;
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-weight: bold;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  font-weight: 700;
   font-size: 1em;
+  cursor: pointer;
 }
 
+/* Estados de hover / focus / active accesibles */
 a.button:hover, button:hover {
-  background-color: #a86433;
+  background-color: var(--accent-dark);
   transform: scale(1.05);
 }
-
-/* ==== Márgenes y separación ==== */
-section, article {
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
+a.button:active, button:active {
+  transform: scale(0.98);
+}
+a.button:focus-visible, button:focus-visible {
+  outline: 3px solid rgba(196,129,74,0.2);
+  box-shadow: 0 0 0 4px rgba(199,129,74,0.12);
 }
 
-/* ==== Footer ==== */
+/* Footer */
 footer {
-  background-color: #e6b17e;
+  background-color: var(--nav-bg);
   color: #fffdf8;
   text-align: center;
   padding: 1.2rem 0;
   margin-top: 3rem;
   font-size: 0.95em;
-  font-family: "Merriweather", serif;
+  font-family: var(--font-serif);
   letter-spacing: 0.5px;
 }
 
-/* ==== Links dentro del texto ==== */
+/* Links dentro del texto */
 a {
   color: #b46b35;
   text-decoration: underline;
 }
+a:hover, a:focus-visible {
+  color: var(--muted);
+  outline: none;
+}
 
-a:hover {
-  color: #8c5c34;
+/* Responsividad básica */
+@media (max-width: 768px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.4rem; }
+  nav a { display: inline-block; margin: 0.35rem 0.6rem; font-size: 1rem; }
+  article { padding: 1.2rem; margin: 1rem; }
+}
+
+/* Ejemplo de soporte para modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1412;
+    --panel-bg: #121615;
+    --text: #e9e6e1;
+    --muted: #cdb69f;
+    --nav-bg: #6b4a2a;
+    --border: rgba(255,255,255,0.04);
+  }
+
+  nav a { color: #fff; }
+  a { color: #f0caa3; }
 }
